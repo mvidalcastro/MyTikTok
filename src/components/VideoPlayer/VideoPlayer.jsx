@@ -1,3 +1,4 @@
+import clsx from "clsx"
 import { useRef, useState } from "react"
 import styles from "./styles.VideoPlayer.module.css"
 
@@ -6,19 +7,20 @@ const SRC= "https://v16-webapp.tiktok.com/9615e1545fbefd0cc87f0fe22093c082/62f8b
 export const VideoPlayer = () => {
   
     const [playing, setPlaying] = useState(false)
-    const video = useRef()
+    const video = useRef(null)
 
     const handlePlay = () =>{
-        if (playing) {
-            video.current.pause();
-        }
-        else {
-            video.current.play();
-        }
-        
+        const {current: videoEl} = video;
+        playing
+            ?videoEl.pause()
+            :videoEl.play();   
         setPlaying(!playing);
-    
     }
+
+    const playerClassName = clsx(styles.player, {
+        [styles.hidden]: playing
+    })
+
 
     return (
     <div>
@@ -27,10 +29,15 @@ export const VideoPlayer = () => {
             src={SRC} 
             controls={false}
             ref = { video }
+            onClick = { handlePlay }
         />
-        <button className={styles.player} onClick = { handlePlay }>
+        
+        <div 
+            className={ playerClassName } 
+            onClick = { handlePlay }
+            >
 
-        </button>
+        </div>
     </div>
   )
 }

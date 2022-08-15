@@ -6,11 +6,16 @@
 .player {
     width: 62px;
     height: 62px;
-    background-image: url(../../assets/btn_play.png);
+    background-image: url(assets/btn_play.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center center;
+    background-color: transparent;
     position: absolute;
     inset: 0;
-    margin: auto;
+    margin: auto;    
+}
+
+.hidden {
+    opacity: 0;
 }
