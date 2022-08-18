@@ -1,14 +1,14 @@
-import { useState } from 'react'
+import clsx from 'clsx'
+//import { useState } from 'react'
 import './App.css'
+import FeedVideos from './components/FeedVideos/FeedVideos'
 import { VideoPlayer } from './components/VideoPlayer/VideoPlayer'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <div className="App">
       <main>
-          <VideoPlayer/>
+          <FeedVideos/>
       </main>
       
     </div>
