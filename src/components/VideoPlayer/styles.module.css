@@ -29,6 +29,7 @@
     position: absolute;
     bottom: 120px;
     right: 8px;
+    z-index: 1;
   }
   
 .action {
@@ -42,4 +43,64 @@
     text-align: center;
     align-items: center;
   }
+
+  .album {
+    animation: rotate 4s infinite linear;
+    background: url('/assets/album.svg');
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   
+  .albumImage {
+    width: 32px;
+    height: 32px;
+    border-radius: 100%;
+    overflow: hidden;
+    object-fit: cover;
+  }
+  
+
+  .description {    
+    align-items: flex-end;
+    bottom: 0;    
+    color: #fff;
+    display: flex;
+    font-size: 13px;
+    justify-content: space-between;
+    padding: 300px 20px 20px;
+    position: absolute;
+    width: 100%;
+    z-index: 0;
+  }
+
+  
+.author {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 17px;
+}
+
+.text {
+  margin-top: 4px;
+  margin-bottom: 0;
+  font-size: 15px;
+}
+
+
+.textWrapper {
+  max-width: 275px;
+  padding-right: 32px;
+}
+
+@keyframes rotate {
+    from  {
+        transform: rotae(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
